@@ -73,7 +73,7 @@
                 if (!this.smoothMove) this.beginMouseFollow(e);
             });
             this.#dom.addEventListener("touchstart", e => {
-                if (!this.smoothMove) this.beginMouseFollow(e);
+                if (!this.smoothMove) this.beginMouseFollow(e.touches[0]);
             });
         }
         setPosition() {
@@ -307,7 +307,7 @@
     window.addEventListener("touchmove", (e) => {
         try {
             if (!mousemoved) {
-                if (selectedPiece) selectedPiece.followMouse(e);
+                if (selectedPiece) selectedPiece.followMouse(e.touches[0]);
                 mousemoved = true;
             }
         } catch (e) {
