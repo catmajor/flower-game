@@ -25,7 +25,7 @@ main {width: 100%; height: 100; display: flex; flex-direction: column}
 
 @media (orientation: portrait) {
     #game-container {flex-direction: column}
-    #left {width: 100%; height: 80vh;}
-    #right {width: 100%; height: 20vh}
+    #left {width: 100%; height: 75vh;}
+    #right {width: 100%; height: 15vh}
     #title span {display: none}
 }
