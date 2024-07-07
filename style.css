@@ -1,0 +1,31 @@
+:root {
+    --0: #0f0529;
+    --1: #4a2574;
+    --2: #7338ad;
+    --3: #924dbf;
+    --4: #9E72c3;
+    --5: #fff;
+}
+
+
+body {width: 100%; height: 100%; padding: 0; margin: 0}
+main {width: 100%; height: 100; display: flex; flex-direction: column}
+#title {width: 100%; height: 10vh; display: flex; align-items: center; justify-content: center; background: var(--1); font-size: 5vh; color: white; font-family: 'Playwrite CO'}
+#game-container {height: 90vh; width: 100%; display: flex; }
+#right {height: 100%; width: 25vw }
+#left {background-color: var(--4); height: 100%; width: 75vw; display: flex; align-items: center; justify-content: center; flex-direction: column}
+#board {width: 75vmin; height: 75vmin; background-color: var(--2); display: grid; grid-template-columns: 33.3% 33.3% 33.3%; border: var(--0) solid 0.5vmin}
+#board>div {border: var(--0) solid 0.5vmin}
+#board>div.closest {background-color: var(--3);}
+#pieces-container {width: 100%; height: 100%; background: var(--3); position: relative}
+#pieces-container .piece {position:absolute; width: 24vmin; height: 24vmin; background-size: 300%; border: var(--0) solid 0.5vmin}
+.piece.smooth-move {transition: 0.5s top, 0.5s left; }
+#congrats-screen {display: flex; align-items: center; justify-content: space-around; width: 100%; height: 10vmin; opacity: 0; appearance: none; user-select: none; color: white; font-family: 'Playwrite CO'}
+#congrats-screen.visible {opacity: 1; appearance: visible}
+
+@media (orientation: portrait) {
+    #game-container {flex-direction: column}
+    #left {width: 100%; height: 80vh;}
+    #right {width: 100%; height: 20vh}
+    #title span {display: none}
+}
